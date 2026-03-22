@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Esperanca.Identity.Application/Esperanca.Identity.Application.csproj" />
+    <Project Path="src/Esperanca.Identity.Domain/Esperanca.Identity.Domain.csproj" />
+    <Project Path="src/Esperanca.Identity.Infrastructure/Esperanca.Identity.Infrastructure.csproj" />
+    <Project Path="src/Esperanca.Identity.WebApi/Esperanca.Identity.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Esperanca.Identity.UnitTests/Esperanca.Identity.UnitTests.csproj" />
+  </Folder>
+</Solution>

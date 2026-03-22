@@ -1,0 +1,25 @@
+{
+  "culture": "en",
+  "texts": {
+    "Identity:001": "Invalid email or password.",
+    "Identity:002": "Invalid token.",
+    "Identity:003": "Invalid or expired refresh token.",
+    "Identity:004": "Email already registered.",
+
+    "Identity:005": "User not found.",
+    "Identity:006": "User already has the GestorONG role.",
+    "Identity:007": "User does not have the GestorONG role.",
+    "Identity:008": "GestorONG role not found.",
+
+    "Identity:100": "Name is required.",
+    "Identity:101": "Name must have at most 150 characters.",
+    "Identity:102": "Email is required.",
+    "Identity:103": "Invalid email.",
+    "Identity:104": "Password is required.",
+    "Identity:105": "Password must have at least 8 characters.",
+    "Identity:106": "Nickname must have at most 100 characters.",
+    "Identity:107": "Refresh token is required.",
+
+    "Identity:900": "Validation error."
+  }
+}
