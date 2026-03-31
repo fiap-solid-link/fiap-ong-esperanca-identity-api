@@ -43,64 +43,6 @@ WebApi → Application → Domain
 
 Cada camada possui um **Module** (`IdentityApplicationModule`, `IdentityInfrastructureModule`, `IdentityWebApiModule`) responsável por registrar suas próprias dependências. O `Program.cs` fica enxuto — apenas bootstrap e pipeline HTTP.
 
-### Estrutura de Pastas
-
-```
-src/
-├── Esperanca.Identity.Domain/
-│   ├── Autenticacao/                   # Usuario, RefreshToken, Role, IRefreshTokenRepository
-│   └── Usuarios/                       # IUsuarioRepository, IRoleRepository, Enums/RoleTipo
-│
-├── Esperanca.Identity.Application/
-│   ├── IdentityApplicationModule.cs    # Module — registra MediatR, FluentValidation, Behaviors
-│   ├── Autenticacao/
-│   │   ├── Registrar/                  # Command + Handler + Validator
-│   │   ├── Login/                      # Command + Handler + Validator
-│   │   ├── RenovarToken/               # Command + Handler + Validator
-│   │   └── ObterMeuPerfil/             # Query + Handler
-│   ├── Usuarios/
-│   │   ├── AtualizarPerfil/            # Command + Handler + Validator
-│   │   ├── ConcederGestor/             # Command + Handler
-│   │   └── RevogarGestor/              # Command + Handler
-│   └── _Shared/
-│       ├── Localization/               # IdentityErrorCodes, pt-BR.json, en.json, IAppLocalizer
-│       ├── Behaviors/                  # ValidationBehavior (pipeline MediatR)
-│       ├── Results/                    # Result<T>
-│       ├── IAppDbContext.cs
-│       ├── IJwtService.cs
-│       ├── IPasswordHasher.cs
-│       └── IUsuarioAutenticado.cs
-│
-├── Esperanca.Identity.Infrastructure/
-│   ├── IdentityInfrastructureModule.cs # Module — registra EF Core, Repos, JWT, Auth
-│   ├── Autenticacao/                   # JwtService, JwtSettings, RefreshTokenRepository, EF Configs
-│   ├── Usuarios/                       # UsuarioRepository, RoleRepository, RoleConfiguration
-│   └── _Shared/                        # IdentityDbContext, BcryptPasswordHasher, DatabaseSeed,
-│                                       # JsonAppLocalizer
-│
-└── Esperanca.Identity.WebApi/
-    ├── IdentityWebApiModule.cs         # Module — orquestra Application + Infrastructure + Swagger
-    ├── Program.cs                      # Bootstrap enxuto (~24 linhas)
-    ├── Autenticacao/Controllers/
-    │   ├── Registrar/                  # RegistrarController
-    │   ├── Login/                      # LoginController
-    │   ├── RenovarToken/               # RenovarTokenController
-    │   └── ObterMeuPerfil/             # ObterMeuPerfilController
-    ├── Usuarios/Controllers/
-    │   ├── AtualizarPerfil/            # AtualizarPerfilController
-    │   ├── ConcederGestor/             # ConcederGestorController
-    │   └── RevogarGestor/              # RevogarGestorController
-    └── _Shared/                        # UsuarioAutenticado, ValidationExceptionMiddleware
-
-tests/
-├── Esperanca.Identity.UnitTests/
-└── Esperanca.Identity.IntegrationTests/
-```
-
-### Gerenciamento Centralizado de Pacotes
-
-Versões de pacotes são gerenciadas centralmente via `Directory.Build.props` e `Directory.Packages.props` na raiz. Nenhum `.csproj` declara versão — para atualizar um pacote, basta alterar o `Directory.Packages.props`.
-
 ### Internacionalização (i18n)
 
 Todas as mensagens de erro e validação são internacionalizadas via arquivos JSON embeddados:
@@ -201,5 +143,5 @@ dotnet test
 dotnet ef migrations add NomeDaMigration --project src/Esperanca.Identity.Infrastructure --startup-project src/Esperanca.Identity.WebApi
 
 # Aplicar migration
-dotnet ef database update --project src/Esperanca.Identity.Infrastructure --startup-project src/Esperanca.Identity.WebApi
+Basta executar a aplicação.
 ```

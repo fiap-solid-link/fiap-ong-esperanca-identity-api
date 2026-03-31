@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Esperanca.Identity.Domain\Esperanca.Identity.Domain.csproj" />
     <ProjectReference Include="..\..\src\Esperanca.Identity.Application\Esperanca.Identity.Application.csproj" />
+    <ProjectReference Include="..\..\src\Esperanca.Identity.WebApi\Esperanca.Identity.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

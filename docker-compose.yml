@@ -16,23 +16,23 @@ services:
       timeout: 5s
       retries: 5
 
-#  identity-api:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    container_name: esperanca-identity-api
-#    environment:
-#      ASPNETCORE_ENVIRONMENT: Development
-#      ConnectionStrings__IdentityDb: "Host=postgres;Port=5432;Database=identity_db;Username=postgres;Password=postgres"
-#      Jwt__SecretKey: "SuperSecretKey-ParaDesenvolvimento-MinimoDE32Chars!"
-#      Jwt__Issuer: "esperanca-identity-api"
-#      Jwt__Audience: "esperanca-platform"
-#      Jwt__AccessTokenExpirationMinutes: "30"
-#    ports:
-#      - "5010:8080"
-#    depends_on:
-#      postgres:
-#        condition: service_healthy
+  identity-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: esperanca-identity-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__IdentityDb: "Host=postgres;Port=5432;Database=identity_db;Username=postgres;Password=postgres"
+      Jwt__SecretKey: "SuperSecretKey-ParaDesenvolvimento-MinimoDE32Chars!"
+      Jwt__Issuer: "esperanca-identity-api"
+      Jwt__Audience: "esperanca-platform"
+      Jwt__AccessTokenExpirationMinutes: "30"
+    ports:
+      - "5010:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
 
 volumes:
   postgres_data:
