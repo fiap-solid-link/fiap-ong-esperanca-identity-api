@@ -1,4 +1,4 @@
-using Esperanca.Identity.Application.Autenticacao.ObterMeuPerfil;
+using Esperanca.Identity.Application.Usuarios.ObterMeuPerfil;
 using Esperanca.Identity.UnitTests.Application.Autenticacao.ObterMeuPerfil.Mocks;
 
 namespace Esperanca.Identity.UnitTests.Application.Autenticacao.ObterMeuPerfil.Fixtures;

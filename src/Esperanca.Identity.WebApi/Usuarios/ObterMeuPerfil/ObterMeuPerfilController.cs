@@ -1,13 +1,14 @@
-using Esperanca.Identity.Application.Autenticacao.ObterMeuPerfil;
+using Esperanca.Identity.Application.Usuarios.ObterMeuPerfil;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Esperanca.Identity.WebApi.Autenticacao.Controllers.ObterMeuPerfil;
+namespace Esperanca.Identity.WebApi.Usuarios.ObterMeuPerfil;
 
 [ApiController]
 [Route("api/auth")]
 [Authorize]
+[Tags("Usuários")]
 public class ObterMeuPerfilController(IMediator mediator) : ControllerBase
 {
     [HttpGet("me")]

@@ -3,11 +3,12 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Esperanca.Identity.WebApi.Usuarios.Controllers.RevogarGestor;
+namespace Esperanca.Identity.WebApi.Usuarios.RevogarGestor;
 
 [ApiController]
 [Route("api/usuarios")]
 [Authorize(Roles = "Admin")]
+[Tags("Usuários")]
 public class RevogarGestorController(IMediator mediator) : ControllerBase
 {
     [HttpDelete("{id:guid}/revogar-gestor")]

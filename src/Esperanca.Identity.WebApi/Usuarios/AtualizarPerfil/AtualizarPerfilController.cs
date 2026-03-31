@@ -3,11 +3,12 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Esperanca.Identity.WebApi.Usuarios.Controllers.AtualizarPerfil;
+namespace Esperanca.Identity.WebApi.Usuarios.AtualizarPerfil;
 
 [ApiController]
 [Route("api/usuarios")]
 [Authorize]
+[Tags("Usuários")]
 public class AtualizarPerfilController(IMediator mediator) : ControllerBase
 {
     [HttpPut("perfil")]

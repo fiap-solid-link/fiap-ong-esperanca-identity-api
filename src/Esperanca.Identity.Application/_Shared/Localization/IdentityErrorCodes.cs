@@ -3,10 +3,10 @@ namespace Esperanca.Identity.Application._Shared.Localization;
 public static class IdentityErrorCodes
 {
     // Autenticacao
-    public const string EmailOuSenhaInvalidos         = "Identity:001";
-    public const string TokenInvalido                 = "Identity:002";
+    public const string EmailOuSenhaInvalidos          = "Identity:001";
+    public const string TokenInvalido                  = "Identity:002";
     public const string RefreshTokenInvalidoOuExpirado = "Identity:003";
-    public const string EmailJaCadastrado             = "Identity:004";
+    public const string EmailJaCadastrado              = "Identity:004";
 
     // Usuarios
     public const string UsuarioNaoEncontrado          = "Identity:005";

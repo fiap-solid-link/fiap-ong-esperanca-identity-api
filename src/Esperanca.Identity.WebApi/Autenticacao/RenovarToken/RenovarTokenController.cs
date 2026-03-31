@@ -1,17 +1,18 @@
-using Esperanca.Identity.Application.Autenticacao.Login;
+using Esperanca.Identity.Application.Autenticacao.RenovarToken;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Esperanca.Identity.WebApi.Autenticacao.Controllers.Login;
+namespace Esperanca.Identity.WebApi.Autenticacao.RenovarToken;
 
 [ApiController]
 [Route("api/auth")]
-public class LoginController(IMediator mediator) : ControllerBase
+[Tags("Autenticação")]
+public class RenovarTokenController(IMediator mediator) : ControllerBase
 {
-    [HttpPost("login")]
+    [HttpPost("refresh")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> Login([FromBody] LoginCommand command, CancellationToken ct)
+    public async Task<IActionResult> RenovarToken([FromBody] RenovarTokenCommand command, CancellationToken ct)
     {
         var result = await mediator.Send(command, ct);
         return result.Sucesso

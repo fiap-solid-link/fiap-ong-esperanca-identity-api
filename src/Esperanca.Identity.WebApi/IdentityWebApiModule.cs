@@ -27,19 +27,19 @@ public static class IdentityWebApiModule
         {
             options.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Esperanca Identity API",
-                Version = "v1",
+                Title       = "Esperanca Identity API",
+                Version     = "v1",
                 Description = "API de Identidade e Acesso - Plataforma Conexao Solidaria"
             });
 
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
-                Name = "Authorization",
-                Type = SecuritySchemeType.Http,
-                Scheme = "bearer",
+                Name         = "Authorization",
+                Type         = SecuritySchemeType.Http,
+                Scheme       = "bearer",
                 BearerFormat = "JWT",
-                In = ParameterLocation.Header,
-                Description = "Insira o token JWT"
+                In           = ParameterLocation.Header,
+                Description  = "Insira o token JWT"
             });
 
             options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -56,6 +56,16 @@ public static class IdentityWebApiModule
                     Array.Empty<string>()
                 }
             });
+
+            options.TagActionsBy(api => api.GroupName is not null
+                ? [api.GroupName]
+                : api.ActionDescriptor.EndpointMetadata
+                    .OfType<TagsAttribute>()
+                    .SelectMany(t => t.Tags)
+                    .DefaultIfEmpty("Outros")
+                    .ToList());
+
+            options.OrderActionsBy(apiDesc => apiDesc.GroupName);
         });
 
         // Health Checks

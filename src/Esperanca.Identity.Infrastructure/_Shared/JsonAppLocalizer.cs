@@ -22,7 +22,10 @@ public class JsonAppLocalizer : IAppLocalizer
 
             using var reader = new StreamReader(stream);
             var json = reader.ReadToEnd();
-            var doc = JsonSerializer.Deserialize<LocalizationFile>(json);
+            var doc = JsonSerializer.Deserialize<LocalizationFile>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
 
             if (doc?.Culture is not null && doc.Texts is not null)
                 _locales[doc.Culture] = doc.Texts;

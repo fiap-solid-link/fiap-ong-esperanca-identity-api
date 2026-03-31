@@ -4,7 +4,7 @@ using Esperanca.Identity.Application._Shared.Results;
 using Esperanca.Identity.Domain.Usuarios;
 using MediatR;
 
-namespace Esperanca.Identity.Application.Autenticacao.ObterMeuPerfil;
+namespace Esperanca.Identity.Application.Usuarios.ObterMeuPerfil;
 
 public sealed class ObterMeuPerfilHandler(
     IUsuarioRepository usuarioRepository,

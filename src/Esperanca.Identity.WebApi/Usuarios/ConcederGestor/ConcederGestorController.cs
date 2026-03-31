@@ -3,11 +3,12 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Esperanca.Identity.WebApi.Usuarios.Controllers.ConcederGestor;
+namespace Esperanca.Identity.WebApi.Usuarios.ConcederGestor;
 
 [ApiController]
 [Route("api/usuarios")]
 [Authorize(Roles = "Admin")]
+[Tags("Usuários")]
 public class ConcederGestorController(IMediator mediator) : ControllerBase
 {
     [HttpPost("{id:guid}/conceder-gestor")]

@@ -1,7 +1,7 @@
 using Esperanca.Identity.Application._Shared.Results;
 using MediatR;
 
-namespace Esperanca.Identity.Application.Autenticacao.ObterMeuPerfil;
+namespace Esperanca.Identity.Application.Usuarios.ObterMeuPerfil;
 
 public record ObterMeuPerfilQuery : IRequest<Result<ObterMeuPerfilResponse>>;
 

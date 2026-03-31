@@ -1,10 +1,10 @@
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using Esperanca.Identity.Application._Shared;
 using Esperanca.Identity.Domain.Autenticacao;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Esperanca.Identity.Infrastructure.Autenticacao;
@@ -28,14 +28,15 @@ public class JwtService(IOptions<JwtSettings> jwtSettings) : IJwtService
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.SecretKey));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        var token = new JwtSecurityToken(
-            issuer: _settings.Issuer,
-            audience: _settings.Audience,
-            claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(_settings.AccessTokenExpirationMinutes),
-            signingCredentials: credentials);
-
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        var handler = new JsonWebTokenHandler();
+        return handler.CreateToken(new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.UtcNow.AddMinutes(_settings.AccessTokenExpirationMinutes),
+            Issuer = _settings.Issuer,
+            Audience = _settings.Audience,
+            SigningCredentials = credentials
+        });
     }
 
     public string GerarRefreshToken()

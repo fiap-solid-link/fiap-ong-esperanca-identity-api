@@ -24,4 +24,7 @@ await DatabaseSeed.SeedAdminAsync(app.Services);
 
 app.Run();
 
-public partial class Program;
+namespace Esperanca.Identity.WebApi
+{
+    public partial class Program;
+}

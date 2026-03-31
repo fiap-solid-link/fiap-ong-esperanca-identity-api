@@ -2,10 +2,11 @@ using Esperanca.Identity.Application.Autenticacao.Registrar;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Esperanca.Identity.WebApi.Autenticacao.Controllers.Registrar;
+namespace Esperanca.Identity.WebApi.Autenticacao.Registrar;
 
 [ApiController]
 [Route("api/auth")]
+[Tags("Autenticação")]
 public class RegistrarController(IMediator mediator) : ControllerBase
 {
     [HttpPost("registrar")]
