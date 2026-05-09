@@ -13,6 +13,7 @@ public static class IdentityErrorCodes
     public const string UsuarioJaPossuiGestor         = "Identity:006";
     public const string UsuarioNaoPossuiGestor        = "Identity:007";
     public const string RoleGestorNaoEncontrada       = "Identity:008";
+    public const string SenhaAtualInvalida            = "Identity:009";
 
     // Validacao
     public const string NomeObrigatorio               = "Identity:100";
@@ -23,6 +24,9 @@ public static class IdentityErrorCodes
     public const string SenhaMinimo8                  = "Identity:105";
     public const string ApelidoMaximo100              = "Identity:106";
     public const string RefreshTokenObrigatorio       = "Identity:107";
+    public const string SenhaAtualObrigatoria         = "Identity:108";
+    public const string NovaSenhaObrigatoria          = "Identity:109";
+    public const string NovaSenhaMinimo8              = "Identity:110";
 
     // Shared
     public const string ErroDeValidacao               = "Identity:900";

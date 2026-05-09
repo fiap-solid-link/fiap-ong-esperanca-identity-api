@@ -133,6 +133,21 @@ public sealed class UsuarioTests
     }
 
     [Fact]
+    public void AlterarSenha_DeveAtualizarSenhaHash()
+    {
+        // Arrange
+        var usuario = new Usuario("Teste", "teste@email.com", "hash_antigo");
+        const string novoHash = "hash_novo";
+
+        // Act
+        usuario.AlterarSenha(novoHash);
+
+        // Assert
+        Assert.Equal(novoHash, usuario.SenhaHash);
+        Assert.NotNull(usuario.AtualizadoEm);
+    }
+
+    [Fact]
     public void AdicionarRefreshToken_DeveAdicionarTokenNaLista()
     {
         // Arrange

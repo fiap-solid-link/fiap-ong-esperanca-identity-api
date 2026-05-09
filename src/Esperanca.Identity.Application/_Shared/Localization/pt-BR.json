@@ -10,6 +10,7 @@
     "Identity:006": "Usuário já possui o perfil GestorONG.",
     "Identity:007": "Usuário não possui o perfil GestorONG.",
     "Identity:008": "Role GestorONG não encontrada.",
+    "Identity:009": "Senha atual inválida.",
 
     "Identity:100": "Nome é obrigatório.",
     "Identity:101": "Nome deve ter no máximo 150 caracteres.",
@@ -19,6 +20,9 @@
     "Identity:105": "Senha deve ter no mínimo 8 caracteres.",
     "Identity:106": "Apelido deve ter no máximo 100 caracteres.",
     "Identity:107": "Refresh token é obrigatório.",
+    "Identity:108": "Senha atual é obrigatória.",
+    "Identity:109": "Nova senha é obrigatória.",
+    "Identity:110": "Nova senha deve ter no mínimo 8 caracteres.",
 
     "Identity:900": "Erro de validação."
   }

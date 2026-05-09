@@ -57,6 +57,12 @@ public class Usuario
 
     public bool PossuiRole(RoleTipo tipo) => _roles.Any(r => r.Tipo == tipo);
 
+    public void AlterarSenha(string novaSenhaHash)
+    {
+        SenhaHash = novaSenhaHash;
+        AtualizadoEm = DateTime.UtcNow;
+    }
+
     public void AdicionarRefreshToken(RefreshToken refreshToken)
     {
         _refreshTokens.Add(refreshToken);

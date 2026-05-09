@@ -10,6 +10,7 @@
     "Identity:006": "User already has the GestorONG role.",
     "Identity:007": "User does not have the GestorONG role.",
     "Identity:008": "GestorONG role not found.",
+    "Identity:009": "Current password is invalid.",
 
     "Identity:100": "Name is required.",
     "Identity:101": "Name must have at most 150 characters.",
@@ -19,6 +20,9 @@
     "Identity:105": "Password must have at least 8 characters.",
     "Identity:106": "Nickname must have at most 100 characters.",
     "Identity:107": "Refresh token is required.",
+    "Identity:108": "Current password is required.",
+    "Identity:109": "New password is required.",
+    "Identity:110": "New password must have at least 8 characters.",
 
     "Identity:900": "Validation error."
   }
