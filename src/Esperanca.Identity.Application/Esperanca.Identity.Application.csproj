@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="_Shared\Localization\pt-BR.json" />
+    <EmbeddedResource Include="_Shared\Localization\en.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Esperanca.Identity.Domain\Esperanca.Identity.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+{
+  "culture": "pt-BR",
+  "texts": {
+    "Identity:001": "Email ou senha inválidos.",
+    "Identity:002": "Token inválido.",
+    "Identity:003": "Refresh token inválido ou expirado.",
+    "Identity:004": "Email já cadastrado.",
+
+    "Identity:005": "Usuário não encontrado.",
+    "Identity:006": "Usuário já possui o perfil GestorONG.",
+    "Identity:007": "Usuário não possui o perfil GestorONG.",
+    "Identity:008": "Role GestorONG não encontrada.",
+
+    "Identity:100": "Nome é obrigatório.",
+    "Identity:101": "Nome deve ter no máximo 150 caracteres.",
+    "Identity:102": "Email é obrigatório.",
+    "Identity:103": "Email inválido.",
+    "Identity:104": "Senha é obrigatória.",
+    "Identity:105": "Senha deve ter no mínimo 8 caracteres.",
+    "Identity:106": "Apelido deve ter no máximo 100 caracteres.",
+    "Identity:107": "Refresh token é obrigatório.",
+
+    "Identity:900": "Erro de validação."
+  }
+}
