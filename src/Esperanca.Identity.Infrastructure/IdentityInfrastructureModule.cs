@@ -42,20 +42,20 @@ public static class IdentityInfrastructureModule
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme    = JwtBearerDefaults.AuthenticationScheme;
         })
         .AddJwtBearer(options =>
         {
             options.TokenValidationParameters = new TokenValidationParameters
             {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
+                ValidateIssuer           = true,
+                ValidateAudience         = true,
+                ValidateLifetime         = true,
                 ValidateIssuerSigningKey = true,
-                ValidIssuer = jwtSettings["Issuer"],
-                ValidAudience = jwtSettings["Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
-                ClockSkew = TimeSpan.Zero
+                ValidIssuer              = jwtSettings["Issuer"],
+                ValidAudience            = jwtSettings["Audience"],
+                IssuerSigningKey         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+                ClockSkew                = TimeSpan.Zero
             };
         });
 

@@ -7,7 +7,7 @@ public class UsuarioAutenticado(IHttpContextAccessor httpContextAccessor) : IUsu
 {
     public Guid? ObterUsuarioId()
     {
-        var user = httpContextAccessor.HttpContext?.User;
+        var user   = httpContextAccessor.HttpContext?.User;
         var userId = user?.FindFirstValue(ClaimTypes.NameIdentifier)
                      ?? user?.FindFirstValue("sub");
 
