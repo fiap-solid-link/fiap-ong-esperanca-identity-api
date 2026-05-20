@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-api
+  namespace: esperanca
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: identity-api }
+  template:
+    metadata:
+      labels: { app: identity-api }
+    spec:
+      containers:
+        - name: identity-api
+          image: fzndev/fiap-ong-esperanca-identity-api:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef: { name: identity-api-config }
+          env:
+            - name: Jwt__SecretKey
+              valueFrom: { secretKeyRef: { name: esperanca-secrets, key: JWT_SECRET_KEY } }
+            - name: ConnectionStrings__IdentityDb
+              value: "Host=identity-postgres;Port=5432;Database=identity_db;Username=postgres;Password=postgres"
+          readinessProbe:
+            httpGet: { path: /health, port: 8080 }
+            initialDelaySeconds: 10
+          livenessProbe:
+            httpGet: { path: /health, port: 8080 }
+            initialDelaySeconds: 20
